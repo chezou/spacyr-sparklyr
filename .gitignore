@@ -1,0 +1,13 @@
+R
+.local
+.julia
+node_modules
+.pip
+.cache
+.config
+.conda
+.ipython
+r_env
+r_env.zip
+.oracle_jre_usage/
+*~
