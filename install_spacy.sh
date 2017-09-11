@@ -6,9 +6,6 @@ source activate ~/r_env
 
 # Download dataset for English
 python -m spacy download en
-# Remove symbolic link and copy original directory
-rm -rf /home/cdsw/r_env/lib/python2.7/site-packages/spacy/data/en
-cp -r /home/cdsw/.local/lib/python2.7/site-packages/en_core_web_sm/en_core_web_sm-1.2.0 /home/cdsw/r_env/lib/python2.7/site-packages/spacy/data/en
 
 # Check loading spacy on Python
 python -c "import spacy; spacy.load('en'); print('OK')"

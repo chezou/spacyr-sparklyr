@@ -73,11 +73,31 @@ grouped_entities <- entities %>%
 
 grouped_entities
 
-library(ggplot2)
+#### Plot the graph
 
+library(ggplot2)
 
 p <- entities %>%
   collect() %>% 
   ggplot(aes(x=factor(entity_type)))
 p <- p + scale_y_log10()
 p + geom_bar()
+
+#### Show Top 10 persons for each document
+
+persons <- entities %>% 
+  filter(entity_type == "PERSON") %>%
+  group_by(doc_id, entity) %>%
+  select(doc_id, entity) %>%
+  count() %>%
+  arrange(doc_id, desc(n)) %>%
+
+persons %>% 
+  filter(doc_id == "text1") %>%
+  head(10) %>%
+  collect()
+
+persons %>% 
+  filter(doc_id == "text2") %>%
+  head(10) %>%
+  collect()
