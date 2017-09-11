@@ -90,7 +90,7 @@ persons <- entities %>%
   group_by(doc_id, entity) %>%
   select(doc_id, entity) %>%
   count() %>%
-  arrange(doc_id, desc(n)) %>%
+  arrange(doc_id, desc(n))
 
 persons %>% 
   filter(doc_id == "text1") %>%

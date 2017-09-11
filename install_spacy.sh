@@ -13,6 +13,7 @@ python -c "import spacy; spacy.load('en'); print('OK')"
 # Install spacyr
 Rscript -e 'if(!require("spacyr", character.only = TRUE, quietly = TRUE)) install.packages("spacyr", dependencies = TRUE, repos="https://cran.r-project.org")'
 source deactivate
+cp -r R/* ~/r_env/lib/R/library/
 
 # Change R script
 sed -i "s,/home/cdsw,./r_env.zip,g" r_env/bin/R 
